@@ -227,10 +227,7 @@ Runner.instance_.__proto__.update = function() {
         }
       }
       if (needJump) {
-        if (distance <= pushLength) this.horizon.obstacles[i].meetTRex = true;
-        else {
-          if (!this.tRex.ducking) this.tRex.startJump(this.currentSpeed);
-        }
+        if (!this.tRex.ducking) this.tRex.startJump(this.currentSpeed);
       }
     }
 
@@ -287,6 +284,17 @@ Runner.instance_.__proto__.update = function() {
     this.tRex.update(deltaTime);
     this.scheduleNextUpdate();
   }
+};
+
+Runner.instance_.tRex.__proto__.startJump = function(speed) {
+  //if (!this.jumping) {
+  this.update(0, "JUMPING");
+  // Tweak the jump velocity based on the speed.
+  this.jumpVelocity = this.config.INIITAL_JUMP_VELOCITY - speed / 10;
+  this.jumping = true;
+  this.reachedMinHeight = false;
+  this.speedDrop = false;
+  //}
 };
 ```
 
