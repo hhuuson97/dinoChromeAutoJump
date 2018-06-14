@@ -1,4 +1,4 @@
-Code tự nhảy:
+# Code tự nhảy:
 
 var IS_IOS = /iPad|iPhone|iPod/.test(window.navigator.platform);
 
@@ -288,11 +288,11 @@ Runner.instance_.__proto__.update = function() {
   }
 };
 
-Code được max điểm:
+# Code được max điểm:
 
 Runner.instance_.distanceMeter.setHighScore(3999950);
 
-Code phóng to, thu nhỏ con khủng long:
+# Code phóng to, thu nhỏ con khủng long:
 
 scale = 2; // Sửa tỉ lệ tại đây
 Runner.instance_.tRex.config.HEIGHT_REAL = Runner.instance_.tRex.config.HEIGHT;
